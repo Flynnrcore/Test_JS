@@ -1,9 +1,9 @@
 <script>
   let baseCurrency = 'USD';
   let targetCurrency = 'RUB';
-  let baseAmount = 1;
+  let baseAmount = 0;
 
-  const apiKey = '1da11b167e70b5b8a4fd7ee0';
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   let targetAmount = 0;
 

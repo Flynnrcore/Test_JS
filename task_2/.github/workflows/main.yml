@@ -1,0 +1,26 @@
+on:
+  push:
+      branches:
+        - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: install dependencies
+      run: npm install
+    
+    - name: Use API key
+      env: 
+        VITE_API_KEY: ${{ secrets.VITE_API_KEY}}
+      run: |
+        echo "API Key: $VITE_API_KEY"
+    
+    - name: Build
+      run: npm run build
+    
+
